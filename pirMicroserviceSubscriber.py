@@ -29,11 +29,11 @@ def on_message(client, userdata, msg):
         pi_model = json.load(pi_file) #convert file object to json object
         pi_file.close()
 
-        pi_file = open("PiDataModel.json", "w") #open the file in write mode
         if pi_model["pi"]["sensors"]["pir"]["value"] != received_json["PIR"] == 1:
+            pi_file = open("PiDataModel.json", "w")  # open the file in write mode
             pi_model["pi"]["sensors"]["pir"]["value"] = received_json["PIR"] == 1 #change data model
             json.dump(pi_model, pi_file, indent=2) #overwrite previous data model
-        pi_file.close()
+            pi_file.close()
 
 
 client = mqtt.Client()
