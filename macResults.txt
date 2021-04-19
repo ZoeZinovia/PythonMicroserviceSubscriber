@@ -6,3 +6,6 @@ LED publisher runtime = 20.32591700553894
 Temperature subscriber runtime = 26.566988945007324
 PIR subscriber runtime = 20.163079261779785
 LED publisher runtime = 20.33706307411194
+PIR subscriber runtime = 16.585538625717163
+PIR subscriber runtime = 16.035892963409424
+Humidity subscriber runtime = 8.642314910888672
