@@ -1,0 +1,8 @@
+#Script to run 4 python scripts in parallel on the subscriber side.
+#Run by using the following line in the correct directory in terminal: bash runPythonScripts <ipaddress of raspberry pi>
+#$1 represents the passed argument (ipaddress)
+
+python3 humidityMicroserviceSubscriber.py $1 &
+python3 temperatureMicroserviceSubscriber.py $1 &
+python3 pirMicroserviceSubscriber.py $1 &
+sleep 2s && python3 ledMicroservicePublisher.py $1

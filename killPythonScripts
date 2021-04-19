@@ -1,0 +1,7 @@
+#Script to kill 4 python scripts on the subscriber side.
+#Run by using the following line in the correct directory in terminal: bash killPythonScripts
+
+pkill -f humidityMicroserviceSubscriber.py &
+pkill -f temperatureMicroserviceSubscriber.py &
+pkill -f pirMicroserviceSubscriber.py &
+pkill -f ledMicroservicePublisher.py
