@@ -14,8 +14,6 @@ def on_connect(client, userdata, flags, rc):
 
 #the on_message function runs once a message is received from the broker
 def on_message(client, userdata, msg):
-    # msg.payload = msg.payload.decode("utf-8")
-    # global timer
     print("message received: " + str(msg.payload))
     received_json = json.loads(msg.payload) #convert the string to json object
     if "Done" in received_json:
@@ -29,7 +27,7 @@ def on_message(client, userdata, msg):
         print("updated runtime file")
     else:
         pi_file = open("PiDataModel.json", "r") #open the file in read-only mode
-        pi_model = json.load(pi_file) #cßonvert file object to json object
+        pi_model = json.load(pi_file) #convert file object to json object
         pi_file.close()
 
         pi_file = open("PiDataModel.json", "w") #open the file in write mode

@@ -16,6 +16,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     print("message received: " + str(msg.payload))
     received_json = json.loads(msg.payload) #convert the string to json object
+    print(type(received_json))
     if "Done" in received_json:
         client.loop_stop()
         client.disconnect()
